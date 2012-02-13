@@ -9,6 +9,8 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.apache.commons.codec.binary.Base64;
+
 
 /**
  * This class defines common routines for generating authentication signatures
@@ -34,15 +36,12 @@ public class CodingUtility {
 			throws java.security.SignatureException {
 		String result;
 		try {
-			System.out.println("data="+data);
-			System.out.println("data.length="+data.length());
-			System.out.println("secretkey="+secretKey);
 			Mac mac = Mac.getInstance("HmacSHA1");
 			SecretKeySpec key = new SecretKeySpec(secretKey.getBytes(),
 					HMAC_SHA1_ALGORITHM);
 			mac.init(key);
 			byte[] authentication = mac.doFinal(data.getBytes());
-			result  = new sun.misc.BASE64Encoder().encode(authentication);
+			result  = new String(new Base64().encodeBase64(authentication), Constants.ENCODING);
 		} catch (Exception e) {
 			throw new SignatureException("Failed to generate HMAC : "
 					+ e.getMessage());
