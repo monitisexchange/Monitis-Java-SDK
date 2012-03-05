@@ -63,6 +63,7 @@ public class HttpConnector {
 			}
 			method.releaseConnection();
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new MonitisException(e, ErrorCodes.SENDING_DATA_IO_EXCEPTION);
 		}
 		//System.out.println("responseText="+response.getResponseText());
