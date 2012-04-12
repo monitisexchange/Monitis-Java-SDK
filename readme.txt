@@ -37,7 +37,7 @@ it under the same terms as Java itself.
 About Monitis
 
 Monitis is an all-in-one hosted systems monitoring platform.
-It provides flexible API to extend its core functionality for monitoring anything,
+It provides flexible API to extend its core functionality for monitoring anything, 
 from anywhere and at anytime.
 
 More about Monitis API - http://monitis.com/api/api.html
