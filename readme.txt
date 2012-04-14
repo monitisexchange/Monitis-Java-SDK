@@ -7,7 +7,8 @@ USAGE
 	So if you want the sdk to use apikey/secret key from conf.properties file then you should use this code
 		Monitis monitis = new Monitis();
 	If you want to ptovide different apikey/secetkey each time you use Monitis api, you should use the code below
-		Monitis monitis = new Monitis(apikey, secretkey);     
+		
+	Monitis monitis = new Monitis(apikey, secretkey);     
 
 	There are several global classes which allow you to access data from api, such as ExternalMonitor, TransactionMonitor, NotificationRule, etc.
 	You can obtain an instance of those classes by calling getInstanceOf method of Monitis class.
